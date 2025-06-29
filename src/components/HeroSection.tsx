@@ -24,7 +24,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Paste your resume + job description and get a perfect CV or cover letter in seconds.
+            Upload your existing resume + job description and get a perfectly tailored CV in seconds.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
@@ -44,11 +44,11 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-500 rounded-full" />
-              <span>AI-powered</span>
+              <span>AI-powered tailoring</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-blue-500 rounded-full" />
-              <span>ATS-friendly</span>
+              <span>ATS-optimized</span>
             </div>
           </div>
         </div>

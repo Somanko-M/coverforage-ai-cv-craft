@@ -19,14 +19,14 @@ const PricingSection = () => {
               100% Free Always
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Generate unlimited CVs and cover letters with just a quick 30-second ad. 
+              Tailor unlimited resumes to any job with just a quick 30-second ad. 
               No sign-ups, no credit cards, no catches.
             </p>
             
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2 text-green-400">
                 <span>✅</span>
-                <span>Unlimited CVs</span>
+                <span>Unlimited CV Tailoring</span>
               </div>
               <div className="flex items-center gap-2 text-green-400">
                 <span>✅</span>
@@ -44,7 +44,7 @@ const PricingSection = () => {
 
             <div className="mt-8 p-4 bg-muted/50 rounded-lg">
               <p className="text-sm text-muted-foreground">
-                💡 <strong>How it works:</strong> Watch a short ad → Unlock your perfect CV → Download & apply!
+                💡 <strong>How it works:</strong> Watch a short ad → Get your tailored CV → Download & apply!
               </p>
             </div>
           </div>

@@ -4,19 +4,19 @@ const HowItWorksSection = () => {
     {
       number: '1',
       title: 'Upload Your Resume',
-      description: 'Simply upload your existing resume PDF or paste the text',
+      description: 'Upload your existing resume PDF - we\'ll extract all your information',
       icon: '📄'
     },
     {
       number: '2',
       title: 'Paste Job Description',
-      description: 'Add the job description from any job posting',
+      description: 'Add the job description from any job posting you\'re targeting',
       icon: '📋'
     },
     {
       number: '3',
-      title: 'Generate & Download',
-      description: 'Get your tailored CV in seconds, ready to apply',
+      title: 'Get Tailored CV',
+      description: 'Download your optimized CV, perfectly matched to the job requirements',
       icon: '🚀'
     }
   ];
@@ -29,7 +29,7 @@ const HowItWorksSection = () => {
             How It Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Three simple steps to your perfect resume
+            Three simple steps to your perfectly tailored resume
           </p>
         </div>
         

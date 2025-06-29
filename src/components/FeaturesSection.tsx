@@ -4,12 +4,12 @@ const FeaturesSection = () => {
     {
       icon: '⚡',
       title: 'Lightning Fast',
-      description: 'AI-generated results in seconds, not hours. Get your tailored resume instantly.'
+      description: 'AI-tailored CV in seconds, not hours. Transform your existing resume instantly.'
     },
     {
       icon: '🧠',
       title: 'Smart Matching',
-      description: 'Advanced AI matches your skills with job keywords for maximum ATS compatibility.'
+      description: 'Advanced AI analyzes job requirements and optimizes your resume for maximum ATS compatibility.'
     },
     {
       icon: '🔒',
@@ -26,7 +26,7 @@ const FeaturesSection = () => {
             Why Choose CoverForage?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Built for job seekers who want results, not complexity
+            Built for job seekers who want their existing resume perfectly tailored to any job
           </p>
         </div>
         
