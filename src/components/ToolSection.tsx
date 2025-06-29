@@ -1,9 +1,10 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { toast } from 'sonner';
+import { generateTailoredCV } from '@/services/groqService';
+import { extractTextFromPDF } from '@/utils/pdfUtils';
 
 const ToolSection = () => {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -31,43 +32,27 @@ const ToolSection = () => {
 
     setIsGenerating(true);
     
-    // Simulate API call to Groq
-    setTimeout(() => {
-      const sampleCV = `JOHN DOE
-Senior Software Engineer
-
-PROFESSIONAL SUMMARY
-Experienced software engineer with 5+ years developing scalable web applications. Proven expertise in React, Node.js, and cloud technologies. Strong background in team leadership and agile development methodologies.
-
-TECHNICAL SKILLS
-• Frontend: React, TypeScript, JavaScript, HTML5, CSS3
-• Backend: Node.js, Python, Express.js, REST APIs
-• Databases: PostgreSQL, MongoDB, Redis
-• Cloud: AWS, Docker, Kubernetes
-• Tools: Git, Jenkins, JIRA, Agile/Scrum
-
-PROFESSIONAL EXPERIENCE
-Senior Software Engineer | TechCorp Inc. | 2021 - Present
-• Led development of customer-facing web platform serving 100K+ users
-• Implemented microservices architecture reducing system latency by 40%
-• Mentored junior developers and conducted code reviews
-
-Software Engineer | StartupXYZ | 2019 - 2021
-• Built responsive web applications using React and Node.js
-• Collaborated with product team to define technical requirements
-• Optimized database queries improving application performance by 30%
-
-EDUCATION
-Bachelor of Science in Computer Science
-University of Technology | 2019
-
-This resume has been optimized for ATS systems and tailored to match the job requirements you provided.`;
+    try {
+      // Extract text from PDF
+      toast.info('Processing your resume...');
+      const resumeText = await extractTextFromPDF(resumeFile);
       
-      setGeneratedCV(sampleCV);
+      // Generate tailored CV using Groq
+      toast.info('Generating your tailored CV...');
+      const tailoredCV = await generateTailoredCV({
+        resumeText,
+        jobDescription
+      });
+      
+      setGeneratedCV(tailoredCV);
       setShowPreview(true);
       setIsGenerating(false);
       toast.success('CV generated successfully!');
-    }, 3000);
+    } catch (error) {
+      console.error('CV generation error:', error);
+      setIsGenerating(false);
+      toast.error(error instanceof Error ? error.message : 'Failed to generate CV. Please try again.');
+    }
   };
 
   const watchAd = () => {
